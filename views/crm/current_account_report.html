@@ -1,0 +1,7 @@
+{{extend 'erplibre.html'}}
+<h1>{{=T("Current account report")}}</h1>
+{{=query_form}}
+{{if operations is not None:}}
+{{=operations}}
+{{=T("Total debt")}}: {{=total_debt}}
+{{pass}}

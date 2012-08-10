@@ -1,0 +1,31 @@
+{{left_sidebar_enabled=right_sidebar_enabled=False}}
+{{extend 'erplibre.html'}}
+{{if 'message' in globals():}}
+
+<h1>{{=message}}</h1>
+
+<hr />
+<ul>
+  <li>{{=T("This is the webapp index view of")}} {{=A(T("GestionLibre"), _href="http://code.google.com/p/erplibre/")}}</li>
+  <li>{{=A(B(T("Customer control panel (requires registration and login)")), _href=URL(c='crm',f='customer_panel'))}}</li>
+  <li>{{=A(B(T("Movements panel")), _href=URL(c='operations',f='index'))}}</li>
+  <li>{{=A(B(T("RIA Stock")), _href=URL(c='scm',f='ria_stock'))}}</li>
+  <li>{{=A(B(T("Journal entries")), _href=URL(c='accounting',f='journal_entries'))}}</li>
+  <li>{{=A(B(T("Order allocation")), _href=URL(c='operations',f='order_allocation'))}}</li>
+  <li>{{=A(B(T("Order allocation list")), _href=URL(c='operations',f='list_order_allocations'))}}</li>
+  <li>{{=A(B(T("Packing slip")), _href=URL(c='operations',f='packing_slip'))}}</li>
+  <li>{{=A(B(T("RIA Receipt")), _href=URL(c='operations',f='ria_receipt'))}}</li>
+  <li>{{=A(B(T("RIA Product billing")), _href=URL(c='operations',f='ria_product_billing'))}}</li>
+  <li>{{=A(B(T("Current account report")), _href=URL(c='crm',f='current_account_report'))}}</li>
+  <li>{{=A(B(T("Movements list")), _href=URL(c='operations',f='movements_list'))}}</li>
+  <li>{{=A(B(T("New operation (movements form)")), _href=URL(c='operations',f='movements_start'))}}</li>
+  <li>{{=A(B(T("Current accounts payments")), _href=URL(c='financials',f='current_accounts_type'))}}</li>
+  <li>{{=A(B(T("Administrative interface")), _href=URL('admin','default','index'))}}</li>
+</ul>
+
+{{else:}}
+{{=BEAUTIFY(response._vars)}}
+{{pass}}
+
+{{block left_sidebar}}New Left Sidebar Content{{end}}
+{{block right_sidebar}}New Right Sidebar Content{{end}}
